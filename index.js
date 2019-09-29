@@ -1,3 +1,4 @@
+    //add items
  $('#js-shopping-list-form').submit(function(event) {
     event.preventDefault();
     let newListItem = $("#shopping-list-entry").val();
@@ -12,12 +13,14 @@
         '</button> </div> </li>');
     });
 
+    //check through items
+    $('.shopping-list').on('click', '.shopping-item-toggle', function(){
+        $(this).closest('li').find('span.shopping-item ').toggleClass('shopping-item__checked');
+        })
+
     //remove item function
 $('.shopping-list').on('click', '.shopping-item-delete', function(){
     $(this).closest('li').remove();
 
     });
 
-$('.shopping-list').on('click', '.shopping-item-toggle', function(){
-    $(this).closest('li').find('span.shopping-item ').toggleClass('shopping-item__checked');
-    })
